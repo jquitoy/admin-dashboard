@@ -32,9 +32,12 @@ export default function SettingsPage() {
     <div className="space-y-6 max-w-4xl">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Settings</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          Settings
+        </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-          Manage your account settings, appearance preferences, and notifications
+          Manage your account settings, appearance preferences, and
+          notifications
         </p>
       </div>
 
@@ -44,17 +47,31 @@ export default function SettingsPage() {
           <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
             <User className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
           </div>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Account Information</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            Account Information
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {[
-            { label: 'Full Name', value: 'Jamie Dela Cruz', type: 'text' },
-            { label: 'Email Address', value: 'jamie.delacruz@university.edu', type: 'email' },
+            { label: 'Full Name', value: 'Joshua A. Quitoy', type: 'text' },
+            {
+              label: 'Email Address',
+              value: 'jquitoy@filamer.edu.ph',
+              type: 'email',
+            },
             { label: 'Role', value: 'Editor-in-Chief', type: 'text' },
-            { label: 'Department', value: 'Communication Arts', type: 'text' },
+            {
+              label: 'Department',
+              value: 'College of Computer Studies',
+              type: 'text',
+            },
             { label: 'Phone Number', value: '+63 912 345 6789', type: 'tel' },
-            { label: 'Location', value: 'University Campus', type: 'text' },
+            {
+              label: 'Location',
+              value: 'Filamer Christian University, Inc.  ',
+              type: 'text',
+            },
           ].map((field) => (
             <div key={field.label}>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -76,16 +93,35 @@ export default function SettingsPage() {
           <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
             <Palette className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
           </div>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Appearance</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            Appearance
+          </h2>
         </div>
 
         <div>
-          <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Theme Mode</p>
+          <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+            Theme Mode
+          </p>
           <div className="flex flex-wrap gap-3">
             {[
-              { mode: 'light', label: 'Light', icon: Sun, desc: 'Light mode for daytime' },
-              { mode: 'dark', label: 'Dark', icon: Moon, desc: 'Dark mode for nighttime' },
-              { mode: 'system', label: 'System', icon: Monitor, desc: 'Follow system preference' },
+              {
+                mode: 'light',
+                label: 'Light',
+                icon: Sun,
+                desc: 'Light mode for daytime',
+              },
+              {
+                mode: 'dark',
+                label: 'Dark',
+                icon: Moon,
+                desc: 'Dark mode for nighttime',
+              },
+              {
+                mode: 'system',
+                label: 'System',
+                icon: Monitor,
+                desc: 'Follow system preference',
+              },
             ].map(({ mode, label, icon: Icon, desc }) => (
               <button
                 key={mode}
@@ -96,20 +132,28 @@ export default function SettingsPage() {
                     : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
                 }`}
               >
-                <div className={`p-2 rounded-lg ${
-                  theme === mode
-                    ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
-                }`}>
+                <div
+                  className={`p-2 rounded-lg ${
+                    theme === mode
+                      ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
+                      : 'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
+                  }`}
+                >
                   <Icon className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <p className={`text-sm font-medium ${
-                    theme === mode ? 'text-emerald-700 dark:text-emerald-300' : 'text-gray-900 dark:text-white'
-                  }`}>
+                  <p
+                    className={`text-sm font-medium ${
+                      theme === mode
+                        ? 'text-emerald-700 dark:text-emerald-300'
+                        : 'text-gray-900 dark:text-white'
+                    }`}
+                  >
                     {label}
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">{desc}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    {desc}
+                  </p>
                 </div>
               </button>
             ))}
@@ -123,17 +167,49 @@ export default function SettingsPage() {
           <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/30">
             <Bell className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
           </div>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Notification Preferences</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
+            Notification Preferences
+          </h2>
         </div>
 
         <div className="space-y-4">
           {[
-            { icon: Mail, label: 'Email Notifications', desc: 'Receive updates via email', enabled: true },
-            { icon: MessageCircle, label: 'Comment Alerts', desc: 'Get notified when someone comments on your posts', enabled: true },
-            { icon: Heart, label: 'Engagement Updates', desc: 'Weekly digest of likes, shares, and follows', enabled: true },
-            { icon: Share2, label: 'Mention Alerts', desc: 'Notify when your publication is mentioned', enabled: false },
-            { icon: Users, label: 'Team Activity', desc: 'Updates from your editorial team members', enabled: true },
-            { icon: Lock, label: 'Security Alerts', desc: 'Login and account security notifications', enabled: true },
+            {
+              icon: Mail,
+              label: 'Email Notifications',
+              desc: 'Receive updates via email',
+              enabled: true,
+            },
+            {
+              icon: MessageCircle,
+              label: 'Comment Alerts',
+              desc: 'Get notified when someone comments on your posts',
+              enabled: true,
+            },
+            {
+              icon: Heart,
+              label: 'Engagement Updates',
+              desc: 'Weekly digest of likes, shares, and follows',
+              enabled: true,
+            },
+            {
+              icon: Share2,
+              label: 'Mention Alerts',
+              desc: 'Notify when your publication is mentioned',
+              enabled: false,
+            },
+            {
+              icon: Users,
+              label: 'Team Activity',
+              desc: 'Updates from your editorial team members',
+              enabled: true,
+            },
+            {
+              icon: Lock,
+              label: 'Security Alerts',
+              desc: 'Login and account security notifications',
+              enabled: true,
+            },
           ].map((notification) => (
             <NotificationToggle key={notification.label} {...notification} />
           ))}
@@ -177,7 +253,9 @@ function NotificationToggle({
           <Icon className="w-4 h-4" />
         </div>
         <div>
-          <p className="text-sm font-medium text-gray-700 dark:text-gray-300">{label}</p>
+          <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+            {label}
+          </p>
           <p className="text-xs text-gray-400 dark:text-gray-500">{desc}</p>
         </div>
       </div>

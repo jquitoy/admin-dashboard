@@ -3,14 +3,70 @@ import StatCard from '@/components/StatCart';
 import { FileText, CheckCircle, Clock, AlertTriangle } from 'lucide-react';
 
 const reportData = [
-  { report: 'Monthly Engagement Report', type: 'Social Media', status: 'Completed', date: '2026-06-15', author: 'Jamie Dela Cruz', pages: 12 },
-  { report: 'Audience Growth Analysis', type: 'Analytics', status: 'Completed', date: '2026-06-12', author: 'Maria Santos', pages: 8 },
-  { report: 'Content Performance Q2', type: 'Performance', status: 'In Progress', date: '2026-06-10', author: 'Carlos Mendoza', pages: 24 },
-  { report: 'Platform Comparison Study', type: 'Research', status: 'Draft', date: '2026-06-08', author: 'Ana Lopez', pages: 16 },
-  { report: 'Ad Campaign ROI Analysis', type: 'Finance', status: 'Completed', date: '2026-06-05', author: 'James Reyes', pages: 10 },
-  { report: 'Reader Demographics Survey', type: 'Research', status: 'In Progress', date: '2026-06-03', author: 'Jamie Dela Cruz', pages: 20 },
-  { report: 'Social Media Trend Forecast', type: 'Analytics', status: 'Draft', date: '2026-06-01', author: 'Maria Santos', pages: 15 },
-  { report: 'Campus Event Coverage Report', type: 'Editorial', status: 'Completed', date: '2026-05-28', author: 'Ana Lopez', pages: 6 },
+  {
+    report: 'Monthly Engagement Report',
+    type: 'Social Media',
+    status: 'Completed',
+    date: '2026-06-15',
+    author: 'Jamie Dela Cruz',
+    pages: 12,
+  },
+  {
+    report: 'Audience Growth Analysis',
+    type: 'Analytics',
+    status: 'Completed',
+    date: '2026-06-12',
+    author: 'Maria Santos',
+    pages: 8,
+  },
+  {
+    report: 'Content Performance Q2',
+    type: 'Performance',
+    status: 'In Progress',
+    date: '2026-06-10',
+    author: 'Carlos Mendoza',
+    pages: 24,
+  },
+  {
+    report: 'Platform Comparison Study',
+    type: 'Research',
+    status: 'Draft',
+    date: '2026-06-08',
+    author: 'Ana Lopez',
+    pages: 16,
+  },
+  {
+    report: 'Ad Campaign ROI Analysis',
+    type: 'Finance',
+    status: 'Completed',
+    date: '2026-06-05',
+    author: 'James Reyes',
+    pages: 10,
+  },
+  {
+    report: 'Reader Demographics Survey',
+    type: 'Research',
+    status: 'In Progress',
+    date: '2026-06-03',
+    author: 'Jamie Dela Cruz',
+    pages: 20,
+  },
+  {
+    report: 'Social Media Trend Forecast',
+    type: 'Analytics',
+    status: 'Draft',
+    date: '2026-06-01',
+    author: 'Maria Santos',
+    pages: 15,
+  },
+  {
+    report: 'Campus Event Coverage Report',
+    type: 'Editorial',
+    status: 'Completed',
+    date: '2026-05-28',
+    author: 'Ana Lopez',
+    pages: 6,
+  },
 ];
 
 const reportColumns = [
@@ -21,12 +77,17 @@ const reportColumns = [
     header: 'Status',
     render: (item: Record<string, unknown>) => {
       const colors: Record<string, string> = {
-        Completed: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
-        'In Progress': 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
-        Draft: 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+        Completed:
+          'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
+        'In Progress':
+          'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+        Draft:
+          'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
       };
       return (
-        <span className={`inline-flex px-2 py-0.5 text-xs font-medium rounded-full ${colors[item.status as string] || ''}`}>
+        <span
+          className={`inline-flex px-2 py-0.5 text-xs font-medium rounded-full ${colors[item.status as string] || ''}`}
+        >
           {item.status as string}
         </span>
       );
@@ -38,12 +99,36 @@ const reportColumns = [
 ];
 
 const recentActivities = [
-  { activity: 'Jamie submitted "Monthly Engagement Report"', time: '2 hours ago', type: 'submission' },
-  { activity: 'Maria completed "Audience Growth Analysis"', time: '5 hours ago', type: 'completion' },
-  { activity: 'Carlos updated "Content Performance Q2"', time: '1 day ago', type: 'update' },
-  { activity: 'New comment on "Platform Comparison Study"', time: '1 day ago', type: 'comment' },
-  { activity: 'Ana started draft of "Campus Event Coverage"', time: '2 days ago', type: 'draft' },
-  { activity: 'Report review scheduled for tomorrow', time: '2 days ago', type: 'schedule' },
+  {
+    activity: 'Jamie submitted "Monthly Engagement Report"',
+    time: '2 hours ago',
+    type: 'submission',
+  },
+  {
+    activity: 'Maria completed "Audience Growth Analysis"',
+    time: '5 hours ago',
+    type: 'completion',
+  },
+  {
+    activity: 'Carlos updated "Content Performance Q2"',
+    time: '1 day ago',
+    type: 'update',
+  },
+  {
+    activity: 'New comment on "Platform Comparison Study"',
+    time: '1 day ago',
+    type: 'comment',
+  },
+  {
+    activity: 'Ana started draft of "Campus Event Coverage"',
+    time: '2 days ago',
+    type: 'draft',
+  },
+  {
+    activity: 'Report review scheduled for tomorrow',
+    time: '2 days ago',
+    type: 'schedule',
+  },
 ];
 
 export default function ReportsPage() {
@@ -51,7 +136,9 @@ export default function ReportsPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Reports</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+          Reports
+        </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
           Track and manage reports generated by The Hillside Echo editorial team
         </p>
@@ -59,10 +146,42 @@ export default function ReportsPage() {
 
       {/* Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard title="Total Reports" value="48" change="12" changeType="positive" icon={FileText} iconBg="bg-emerald-100 dark:bg-emerald-900/30" subtitle="All time" />
-        <StatCard title="Completed" value="32" change="4" changeType="positive" icon={CheckCircle} iconBg="bg-emerald-100 dark:bg-emerald-900/30" subtitle="This quarter" />
-        <StatCard title="In Progress" value="9" change="2" changeType="neutral" icon={Clock} iconBg="bg-emerald-100 dark:bg-emerald-900/30" subtitle="Active now" />
-        <StatCard title="Overdue" value="3" change="1" changeType="negative" icon={AlertTriangle} iconBg="bg-amber-100 dark:bg-amber-900/30" subtitle="Needs attention" />
+        <StatCard
+          title="Total Reports"
+          value="48"
+          change="12"
+          changeType="positive"
+          icon={FileText}
+          iconBg="bg-emerald-100 dark:bg-emerald-900/30"
+          subtitle="All time"
+        />
+        <StatCard
+          title="Completed"
+          value="32"
+          change="4"
+          changeType="positive"
+          icon={CheckCircle}
+          iconBg="bg-emerald-100 dark:bg-emerald-900/30"
+          subtitle="This quarter"
+        />
+        <StatCard
+          title="In Progress"
+          value="9"
+          change="2"
+          changeType="neutral"
+          icon={Clock}
+          iconBg="bg-emerald-100 dark:bg-emerald-900/30"
+          subtitle="Active now"
+        />
+        <StatCard
+          title="Overdue"
+          value="3"
+          change="1"
+          changeType="negative"
+          icon={AlertTriangle}
+          iconBg="bg-amber-100 dark:bg-amber-900/30"
+          subtitle="Needs attention"
+        />
       </div>
 
       {/* Reports Table & Recent Activity */}
@@ -79,25 +198,42 @@ export default function ReportsPage() {
 
         {/* Recent Activity */}
         <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
-          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4">Recent Activity</h3>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4">
+            Recent Activity
+          </h3>
           <div className="space-y-4">
             {recentActivities.map((activity, i) => {
               const typeColors: Record<string, string> = {
-                submission: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-                completion: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
-                update: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
-                comment: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
-                draft: 'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400',
-                schedule: 'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
+                submission:
+                  'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
+                completion:
+                  'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400',
+                update:
+                  'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400',
+                comment:
+                  'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
+                draft:
+                  'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400',
+                schedule:
+                  'bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400',
               };
               return (
-                <div key={i} className="flex items-start gap-3 pb-4 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0">
-                  <div className={`p-1.5 rounded-full ${typeColors[activity.type] || ''}`}>
+                <div
+                  key={i}
+                  className="flex items-start gap-3 pb-4 border-b border-gray-100 dark:border-gray-800 last:border-0 last:pb-0"
+                >
+                  <div
+                    className={`p-1.5 rounded-full ${typeColors[activity.type] || ''}`}
+                  >
                     <Clock className="w-3 h-3" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm text-gray-700 dark:text-gray-300">{activity.activity}</p>
-                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">{activity.time}</p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      {activity.activity}
+                    </p>
+                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+                      {activity.time}
+                    </p>
                   </div>
                 </div>
               );
@@ -108,11 +244,13 @@ export default function ReportsPage() {
 
       {/* Project Status */}
       <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
-        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4">Project Status Overview</h3>
+        <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4">
+          Project Status Overview
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
             {
-              title: 'Q2 Content Strategy',
+              title: 'Academic Year 26 to 27 Content Strategy',
               progress: 75,
               status: 'On Track',
               color: 'text-emerald-600 dark:text-emerald-400',
@@ -128,7 +266,7 @@ export default function ReportsPage() {
               tasks: '5/11 tasks completed',
             },
             {
-              title: 'Yearbook Edition',
+              title: 'Financial Report',
               progress: 30,
               status: 'Behind Schedule',
               color: 'text-amber-600 dark:text-amber-400',
@@ -136,17 +274,31 @@ export default function ReportsPage() {
               tasks: '6/20 tasks completed',
             },
           ].map((project) => (
-            <div key={project.title} className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4">
+            <div
+              key={project.title}
+              className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4"
+            >
               <div className="flex items-center justify-between mb-2">
-                <p className="text-sm font-medium text-gray-900 dark:text-white">{project.title}</p>
-                <span className={`text-xs font-medium ${project.color}`}>{project.status}</span>
+                <p className="text-sm font-medium text-gray-900 dark:text-white">
+                  {project.title}
+                </p>
+                <span className={`text-xs font-medium ${project.color}`}>
+                  {project.status}
+                </span>
               </div>
               <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                <div className={`h-full rounded-full ${project.barColor} transition-all`} style={{ width: `${project.progress}%` }} />
+                <div
+                  className={`h-full rounded-full ${project.barColor} transition-all`}
+                  style={{ width: `${project.progress}%` }}
+                />
               </div>
               <div className="flex items-center justify-between mt-2">
-                <span className="text-xs text-gray-500 dark:text-gray-400">{project.progress}%</span>
-                <span className="text-xs text-gray-500 dark:text-gray-400">{project.tasks}</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  {project.progress}%
+                </span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  {project.tasks}
+                </span>
               </div>
             </div>
           ))}
